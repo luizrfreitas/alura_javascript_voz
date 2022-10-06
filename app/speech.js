@@ -14,6 +14,7 @@ function onSpeak(e){
 
     chute = e.results[0][0].transcript;
     exibeChuteNaTela(chute);
+    vericacaoDeNumero(chute);
     
 }
 
@@ -23,3 +24,5 @@ function exibeChuteNaTela(chute) {
         <span class="box">${chute}</span>
      `
 }
+
+recognition.addEventListener('end', () => recognition.start())
