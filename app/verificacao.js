@@ -12,7 +12,10 @@ function vericacaoDeNumero(chute) {
     }
 
     if(numero === numeroSecreto){
-        elementoChute.innerHTML += `Parábens! O número secreto é ${numeroSecreto}`;
+        elementoChute.innerHTML += `
+        Parábens! O número secreto é ${numeroSecreto}
+        <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button>
+        `;
     } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
@@ -32,3 +35,9 @@ function naoENumero(numero) {
 function outOfRange(numero){
     return numero > maiorValor || numero < menorValor
 }
+
+document.body.addEventListener('click', e => {
+    if(e.target.id == 'jogar-novamente') {
+        window.location.reload();
+    }
+})
